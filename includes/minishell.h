@@ -6,7 +6,7 @@
 /*   By: aabouriz <aabouriz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 00:06:35 by ostouayr          #+#    #+#             */
-/*   Updated: 2025/03/15 17:26:19 by aabouriz         ###   ########.fr       */
+/*   Updated: 2025/03/15 21:12:38 by aabouriz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 # include "../libft/libft.h"
+
+typedef struct s_tree
+{
+	char			*op;
+	char			**cmd;
+	struct s_tree	*left;
+	struct s_tree	*right;
+}	t_tree;
 
 void	b_pwd(void);
 void	b_exit(int is_there_stat, int status);
