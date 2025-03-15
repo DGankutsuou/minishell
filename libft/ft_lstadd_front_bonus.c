@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blessed <blessed@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 13:36:15 by blessed           #+#    #+#             */
-/*   Updated: 2025/03/06 17:18:35 by blessed          ###   ########.fr       */
+/*   Created: 2024/11/05 10:56:43 by aabouriz          #+#    #+#             */
+/*   Updated: 2025/03/08 17:51:47 by blessed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-char	*read_line()
+void	ft_lstadd_front(t_cmdl **lst, t_cmdl *new)
 {
-	char	*line;
-
-	line = readline("mini$ ");
-	return (line);
-}
-
-int	main(int argc, char **argv)
-{
-	// 1: get line
-	// 2: parce
-	// 3: execute
-	// 4: loop
-	// compile with -lreadline
-	char	*line;
-
-	line = read_line();
-	while (line)
+	if (lst && new)
 	{
-		printf ("%s\n", line);
-
-
-		line = read_line(); // todo
+		new->next = *lst;
+		*lst = new;
 	}
-	return (0);
 }

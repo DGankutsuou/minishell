@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blessed <blessed@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aabouriz <aabouriz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 15:49:29 by blessed           #+#    #+#             */
-/*   Updated: 2025/03/06 16:26:13 by blessed          ###   ########.fr       */
+/*   Created: 2024/10/22 08:45:47 by aabouriz          #+#    #+#             */
+/*   Updated: 2024/11/04 20:28:27 by aabouriz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-#define MINISHELL_H
+#include "libft.h"
 
-# define _GNU_SOURSE
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <sys/wait.h>
-# include <readline/readline.h>
-# include <readline/history.h>
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			i;
+	unsigned char	*temp;
 
-#endif
+	if (!b)
+		return (NULL);
+	i = 0;
+	temp = (unsigned char *)b;
+	while (i < len)
+		temp[i++] = (unsigned char)c;
+	return (b);
+}
